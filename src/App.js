@@ -3,6 +3,9 @@ import {Routes, Route} from 'react-router-dom'
 import ImageGallery from './Components/ImageGallery/ImageGallery';
 import Login from './Components/Pages/Login/Login';
 import Signup from './Components/Pages/SignUp/SignUp';
+
+
+
 function App() {
   return (
     <Routes>

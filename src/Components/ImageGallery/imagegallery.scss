@@ -1,3 +1,5 @@
+
+
 .main {
     display: flex;
     align-items: center;
@@ -53,5 +55,10 @@
 @media (max-width:768px){
     .grid_container{
         grid-template-columns: 1fr;
+
+        .image_container{
+             width: 250px;
+             height: 250px;
+        }
     }
 }
