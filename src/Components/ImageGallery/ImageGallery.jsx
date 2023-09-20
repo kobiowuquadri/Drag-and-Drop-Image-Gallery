@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import images from '../../Assets/Data/Data.json';
-import './imagegallery.scss';
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import {
   SortableContext,
@@ -11,6 +10,7 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { getAuth } from 'firebase/auth';
 import { RingLoader } from 'react-spinners';
+import './imagegallery.scss';
 
 
 
@@ -66,7 +66,9 @@ function ImageGallery() {
    
     <div>
        {
-      isLoading? <RingLoader className='loading' color="#36d7b7" />:
+      isLoading? <div className='loading'>
+        <RingLoader color="#36d7b7" />
+      </div>:
       
       <div>
         {auth.user? (

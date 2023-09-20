@@ -1,0 +1,16 @@
+.form-body {
+    background: url(../../../../public/Images/img1.jpeg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    overflow:hidden ;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        min-height: 100vh;
+    }
+}
+

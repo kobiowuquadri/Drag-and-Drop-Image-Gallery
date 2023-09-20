@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {  AuthErrorCodes, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../../services/firebase";
 import { useNavigate } from "react-router-dom";
-
+import './login.scss'
 
 
 function Login() {
