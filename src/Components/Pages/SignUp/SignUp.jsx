@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { AuthErrorCodes, createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../../../services/firebase";
 import { useNavigate } from "react-router-dom";
+import '../Login/login.scss'
+
+
 
 function Signup() {
   const [input, setInput] = useState({ email: "", password: "" });
@@ -81,17 +84,17 @@ function Signup() {
         </div>
         <div className="btn">
           {error ? <p className="login-error">{error}</p> : null}
-          <button title="Sign up" aria-label="Signup" type="submit">
+          <button id="submit" title="Sign up" aria-label="Signup" type="submit">
             Create account
           </button>
         </div>
-      </form>
       <div className="option">
         <p>
           Already have an account?
           <Link to="/login">Sign in</Link>
         </p>
       </div>
+      </form>
     </div>
   );
 }

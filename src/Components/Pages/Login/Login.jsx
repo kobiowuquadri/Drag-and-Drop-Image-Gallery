@@ -83,17 +83,17 @@ function Login() {
         </div>
         <div className="btn">
           {error ? <p className="login-error">{error}</p> : null}
-          <button title="Login" aria-label="Login" type="submit">
+          <button id="submit" title="Login" aria-label="Login" type="submit">
             Login
           </button>
         </div>
-      </form>
       <div className="option">
         <p>
           Don't have an account?
           <Link to="/signup">Sign Up</Link>
         </p>
       </div>
+      </form>
     </div>
   );
 }

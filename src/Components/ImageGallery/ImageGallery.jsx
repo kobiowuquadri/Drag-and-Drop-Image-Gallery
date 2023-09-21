@@ -11,9 +11,9 @@ import { CSS } from '@dnd-kit/utilities';
 import { getAuth } from 'firebase/auth';
 import { RingLoader } from 'react-spinners';
 import './imagegallery.scss';
-
-
-
+import Header from '../Header/Header';
+import HeroSection from '../HeroSection/HeroSection';
+import Footer from '../Footer/Footer';
 
 const SortableUser = ({ image }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
@@ -63,44 +63,49 @@ function ImageGallery() {
   }, [])
 
   return (
-   
-    <div>
-       {
-      isLoading? <div className='loading'>
-        <RingLoader color="#36d7b7" />
-      </div>:
-      
-      <div>
-        {auth.user? (
-        <div className="main">
-        <h1>MY GALLERY</h1>
-        <div className="grid_container">
-          <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
-            <SortableContext items={sortedImages} strategy={verticalListSortingStrategy}>
-              {sortedImages.map((image) => {
-                return <SortableUser key={image.id} image={image} />;
-              })}
-            </SortableContext>
-          </DndContext>
-        </div>
-      </div>
-      ): (
-        <div className="main">
-        <h1>MY GALLERY</h1>
-        <div className="grid_container">
-            <SortableContext items={sortedImages} strategy={verticalListSortingStrategy}>
-              {sortedImages.map((image) => {
-                return <SortableUser key={image.id} image={image} />;
-              })}
-            </SortableContext>
-        </div>
-      </div>
-      )}
-      </div>
     
-    }
+    <div id='main_container'>
+      <Header/>
+      <HeroSection/>
+      <div>
+         {
+        isLoading? <div className='loading'>
+          <RingLoader color="#36d7b7" />
+        </div>:
       
-
+        <div>
+          {auth.user? (
+          <div className="main">
+          <h1>MY GALLERY</h1>
+          <div className="grid_container">
+              <SortableContext items={sortedImages} strategy={verticalListSortingStrategy}>
+                {sortedImages.map((image) => {
+                  return <SortableUser key={image.id} image={image} />;
+                })}
+              </SortableContext>
+          </div>
+        </div>
+        ): (
+          <div className="main">
+          <h1>MY GALLERY</h1>
+          <div className="grid_container">
+            <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+              <SortableContext items={sortedImages} strategy={verticalListSortingStrategy}>
+                {sortedImages.map((image) => {
+                  return <SortableUser key={image.id} image={image} />;
+                })}
+              </SortableContext>
+            </DndContext>
+          </div>
+        </div>
+          
+        )}
+        </div>
+      
+      }
+      
+      </div>
+      <Footer/>
     </div>
   );
 }

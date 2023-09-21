@@ -1,16 +1,73 @@
 .form-body {
-    background: url(../../../../public/Images/img1.jpeg) no-repeat center;
+    background: url(../../../../public/Images/img3.jpeg) no-repeat center;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
     height: 100vh;
     overflow:hidden ;
+    width: 100%;
 
     form {
+        width: 400px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         gap: 20px;
-        min-height: 100vh;
+        background-color:#eee;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+
+        h1 {
+            color: red;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .email-input, .password-input {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 10px;
+            font-size: 1.2rem;
+            width: 90%;
+           
+
+            input {
+                padding: 10px;
+                width: 100%;
+                outline: none;
+                border: 1px solid blue;
+                border-radius: 5px;
+                width: 100%;
+            }
+
+        }
+        #submit {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: .5rem 1.5rem;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        }
     }
+
+    @media(max-width:768px){
+        form {
+            width: 250px;
+        }
+    }
+    
 }
+
+
+
 
